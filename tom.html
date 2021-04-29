@@ -1,0 +1,25 @@
+<html>
+<head>
+<body>
+<h1>
+Tom Email Robot
+</h1>
+
+Enter your question: 
+<input type="text" id="myText" value=""><button onclick="no()">Enter</button><br>
+Tom's Response: 
+<span id = "no"></span>
+
+<script>
+function no() {
+  var randomColor = Math.floor(Math.random()*16777215).toString(16);
+  var fontsize = Math.floor(Math.random()*100).toString()
+  document.getElementById("no").innerHTML = "No";
+  document.getElementById("no").style.color = "#" + randomColor;
+  document.getElementById("no").style.fontSize = fontsize + "px";
+  
+}
+</script>
+</body>
+</head>
+</html>

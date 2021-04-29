@@ -1,0 +1,9 @@
+table, th, td {
+  border: 1px solid black;
+  padding: 5px;
+  border-collapse: collapse;
+}
+
+input {
+      width: 50px; 
+}

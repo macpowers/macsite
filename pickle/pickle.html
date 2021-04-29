@@ -1,0 +1,42 @@
+<html>
+<head>
+  <style>
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  </style>
+</head>
+<body>
+
+<h1> Pickle Clicker</h1>
+<h2> Feed Pickle to Gain Power </h2>
+
+<p>Food Eaten: <span id = "food">0</span></p>
+
+<p id = "state">
+<span id = "eatfood"><button class="button" onclick="increment()">Eat Dog Food</button></span>
+<span id = "StealHuman"> </span>
+<span id = "eatworm"> </span>
+<span id = "eatbird"> </span>
+<span id = "eatdad"> </span>
+<span id = "eatmom"> </span>
+<span id = "eatself"> </span>
+</p>
+
+<p> Power Obtained: <span id = "power">0</span>
+<br><span id = "notenough"></span> </p>
+<button class="button" onclick="spendfood()">Digest 10 Food to Gain 1 Power</button>
+<button class="button" onclick="spend100food()">Digest 100 Food to Gain 10 Power</button>
+<button class="button" onclick="spend500food()">Digest 500 Food to Gain 100 Power</button>
+<script type="text/javascript" src="cool.js"> </script>
+</body>
+</html>

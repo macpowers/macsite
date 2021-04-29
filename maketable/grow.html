@@ -1,0 +1,52 @@
+<html>
+  <head>
+  </head>
+
+  <body >
+    Growth Rate in ms: <input type="number" id="rate" value=500> <br>
+    Range of numbers: <input type="number" id="range" value=2>
+
+    <button onclick="go()">Start growing</button>
+
+    <p id = "test"></p>
+    <p id = "grow"></p>
+
+    <script type="text/javascript">
+       const range = parseInt(document.getElementById("range").value);
+        const rate = parseInt(document.getElementById("rate").value);
+
+        let rows = 1;
+        let cols = 1;
+
+function start(){
+
+        let s = '<table>';
+        let val = 1;
+
+        for (let i = 0; i < rows; i++){
+          s += '<tr>';
+
+          for (let j = 0; j < cols; j++){
+            val = Math.floor(Math.random()*(range+1) );
+            s += '<td>' + val +  '</td>';
+          }
+          s += '</tr>';
+        }
+        s += '</table>'
+
+        document.getElementById("grow").innerHTML = s;
+        rows ++;
+        cols ++;
+      }
+
+      function go(){
+        setInterval('start()', rate);
+      }
+
+    </script>
+
+  </body>
+
+
+
+</html>

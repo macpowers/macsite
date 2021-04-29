@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+<html>
+<title>Wedding Countdown</title>
+<head>
+<link rel="icon" href="favicon.png">
+<script>
+function howmany() {
+var d = new Date(2022, 9, 8);
+var currentTime = new Date();
+var dif = (d.getTime() - currentTime.getTime())/ (1000*60*60*24)
+var fin = Math.floor(dif)
+
+document.getElementById("days").innerHTML = fin;
+
+var hours = (dif - fin)*24;
+var finhours = Math.floor(hours);
+
+document.getElementById("hours").innerHTML = finhours;
+
+var mins = (hours- finhours)*60;
+var finmin = Math.floor(mins);
+
+document.getElementById("minutes").innerHTML = finmin;
+
+var secs = (mins - finmin)*60
+var finsec = Math.round(secs)
+document.getElementById("seconds").innerHTML = finsec;
+
+}
+
+</script>
+</head>
+
+<body onload = "howmany()">
+
+
+<h2> My Wedding Day is in: </h2>
+
+<h2><span id="days"></span> days</h2>
+<h2><span id="hours"></span> hours</h2>
+<h2><span id="minutes"></span> minutes</h2>
+<h2><span id="seconds"></span> seconds</h2>
+
+<script>setInterval('howmany()', 1000);</script>
+
+</body>
+</html> 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Quebecois Sacre Generator</title>
+  </head>
+  <body>
+    <h1>Quebec Swear Generator</h1>
+    <h3>Give a length and a final word and be sacre at in flawless quebec french</h3>
+
+    <label for="swearlength">Length of Sacre:</label>
+    <input type="text" id="swearlength" name="swearlength"><br><br>
+
+    <label for="lastWord">Final Word:</label>
+    <input type="text" id="lastWord" name="lastWord"><br><br>
+
+    <button onclick="genSacre()">Generate Sacre</button>
+
+    <p id="Sacre"> </p> <br>
+
+    <h1>Make Friendly Sacre</h1>
+    <h3>Input a sacre and have it returned in non-offensive version</h3>
+    <label for="lastWord">Sacre:</label>
+    <input type="text" id="meanSacre" name="meanSacre"><br><br>
+    <button onclick="deOffend()">Fix Sacre</button>
+    <p id="friendlySacre"> </p>
+
+    <script type="text/javascript">
+
+      const sacreList = ['tabarnak', 'calice', 'ciboire', 'criss', 'esti', 'trou-du-cul'];
+
+      const niceSacres = {
+        tabarnak: ['tabarnouche', 'tabarouette', 'batarnak' , 'tabarslaque', 'tabarclak','tabarnache', 'barnac', 'tabarnane', 'tabarlan', 'taberkhalil', 'tabarnoune', 'tabarnanne','tabarnin'],
+        esti: ['titi', 'estifie', 'estique', 'estine'],
+        calice: ['câline', 'câlif', 'câlique', 'câline de bine', 'câlibine', 'câlibouette'],
+        criss: ['cristie', 'crime', 'crimebine', 'criff', 'cliss', 'christophe'],
+        ciboire: ['cibolle', 'cibollaque', 'ciboulle', 'ciboulette', 'gériboire'],
+        'trou-du-cul': ["p'tit vlimeux"]
+      }
+
+      function genSacre(){
+
+        const wordLength = parseInt(document.getElementById("swearlength").value);
+        const lastWord = document.getElementById("lastWord").value;
+        let sacre = '';
+
+        for (let i = 0; i < wordLength; i++){
+          sacre += sacreList[Math.floor(Math.random()*sacreList.length)] + " de ";
+        }
+
+        sacre += lastWord + ".";
+        document.getElementById('Sacre').innerHTML = '<h2>' + sacre + '</h2>';
+      }
+
+
+      function deOffend(){
+        const badSacre = document.getElementById("meanSacre").value;
+        const wordList = badSacre.split(' ');
+        let niceList = [];
+
+        for (word of wordList){
+          if (word in niceSacres){
+            newWord = niceSacres[word][Math.floor(Math.random()*niceSacres[word].length)];
+            niceList.push(newWord);
+          }
+          else{
+            niceList.push(word);
+          }
+        }
+
+        niceWord = niceList.join(' ');
+        document.getElementById('friendlySacre').innerHTML = '<h2>' + niceWord + '</h2>';
+      }
+
+    </script>
+
+  </body>
+</html>

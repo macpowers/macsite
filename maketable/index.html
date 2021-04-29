@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dynamic Table Test </title>
+  </head>
+  <body>
+
+    Rows: <input type="number" id="rows" value=3><br>
+    Columns: <input type="number" id="cols" value=3>
+
+    <button onclick="outputButton()">Enter</button>
+
+    <p id = "table1"></p>
+
+
+
+
+    <script>
+      function outputButton(){
+        var rows = parseInt(document.getElementById("rows").value);
+        var cols = parseInt(document.getElementById("cols").value);
+
+        let s = '<table>';
+
+        for (let i = 0; i < rows; i++){
+          s += '<tr>';
+
+          for (let j = 0; j < cols; j++){
+            s += '<td> 0 </td>';
+          }
+
+          s += '</tr>';
+
+        }
+        s += '</table>'
+
+        document.getElementById("table1").innerHTML = s;
+
+      }
+     </script>
+
+  </body>
+</html>
